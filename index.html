@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/styel.css">
+
+
+    <title>Weather</title>
+</head>
+
+<body>
+
+    <nav class="navba">
+        <div class="container d-flex justify-content-between p-5">
+            <a class="d-flex flex-row justify-content-center align-items-center" href="#"><img class="mx-3 w-50 h-50"
+                    src="./Images/logo.png" alt="clouds">
+                <div class="w-75">
+                    <h1 class="fs-6">Weather</h1>
+                    <small>tagline goes here</small>
+                </div>
+            </a>
+
+            <div id="navLinks" class="nav-links">
+                <a class="p-4" href="#">Home</a>
+                <a class="p-4" href="#">News</a>
+                <a class="p-4" href="#">Live Cameras</a>
+                <a class="p-4" href="#">Photos</a>
+                <a class="p-4" href="">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero py-5">
+        <div class="container">
+            <form class="d-flex mb-4 py-5">
+                <input class="form-control me-2 rounded-5 bg-danger-subtle" type="search" id="searchInput" placeholder="Find your Location..."
+                    aria-label="Search">
+                <button id="searchBtn" class="btn btn-info" type="submit">Search</button>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div id="forcastTable" class="forcast-table position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="card bg-black col-4 p-0 first-col">
+                    <div class="rounded-start-3">
+
+                        <div class="forcast-header py-2 px-2 bg-dark d-flex justify-content-between">
+
+                            <div id="firstDayName" class="text-white-50"></div>
+
+                            <div>
+                                <span id="firstDayNum" class="text-white-50"></span>
+                                <span id="firstMonthName" class="text-white-50"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="forcast-footer pt-4 px-4">
+
+                            <div id="firstDayLocation" class="fs-3 text-white"></div>
+
+                            <div class="d-flex display-1 text-white">
+                                <div id="firstDayTemp"></div>
+                                <sub>o</sub>c
+                            </div>
+
+                            <div><img id="fisrtDayImg" class="w-25" id="today" src="" alt="condition img"></div>
+
+                            <div id="firstDayConditionText" class="text-info my-4"></div>
+
+                            <div class="icons d-flex align-items-center">
+                                <div class="d-flex me-4">
+                                    <img class="weather-icon me-2 umbrella" src="./Images/icon-umberella.png"
+                                        alt="Umberella Icon">
+                                    <p id="umberellaNum" class="fs-6 text-white"></p>
+                                </div>
+
+                                <div class="d-flex me-4">
+                                    <img class="weather-icon me-2 wind" src="./Images/icon-wind.png" alt="Wind Icon">
+                                    <p id="windNum" class="fs-6 text-white"></p>
+                                </div>
+
+                                <div class="d-flex me-4">
+                                    <img class="weather-icon me-2 compass" src="./Images/icon-compass.png"
+                                        alt="Compass Icon">
+                                    <p id="compassNum" class="fs-6 text-white"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-dark col-4 p-0 middle-col">
+
+                    <div class="forcast-header py-2 px-2 bg-black d-flex justify-content-center">
+                        <div class="text-white-50" id="secDayName"></div>
+                    </div>
+
+                    <div class="forcast-footer bg-dark py-4 px-4 text-center">
+
+                        <div><img id="secDayImg" class="weather-icon w-25 mt-4" src="" alt="Sun Img"></div>
+
+                        <div class="d-flex text-white fs-3 justify-content-center mt-3">
+                            <div id="secMaxTemp"></div>
+                            <sub>o</sub>C
+                        </div>
+
+                        <div class="d-flex text-white mb-5 fs-5 justify-content-center">
+                            <div id="secMinTemp"></div>
+                            <sub>o</sub>
+                        </div>
+
+                        <div id="secDayConditionText" class="mb-5 text-info"></div>
+                    </div>
+                </div>
+
+                <div class="card bg-black col-4 p-0 last-col">
+
+                    <div class="forcast-header py-2 px-2 bg-dark d-flex justify-content-center">
+                        <div id="thrdDayName" class="text-white-50"></div>
+                    </div>
+
+                    <div class="forcast-footer bg-black py-4 px-4 text-center">
+                        <div><img id="thrdDayImg" class="w-25 mt-4" src="" alt="Sun Img"></div>
+                        <div class="d-flex text-white fs-3 justify-content-center">
+                            <div id="thrdMaxTemp"></div>
+                            <p><sup>o</sup>c</p>
+                        </div>
+                        <div class="d-flex text-white mb-5 fs-5 justify-content-center">
+                            <div id="thrdMinTemp"></div>
+                            <p><sup>o</sup></p>
+                        </div>
+                        <div id="thrdDayConditionText" class="mb-5 text-info"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter your email to subscribe..."
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary rounded-5" type="button"
+                            id="button-addon2">subscribe</button>
+                    </div>
+                </div>
+                <div class="col-3 offset-1">
+                    <ul class="d-flex z-3">
+                        <li class="mx-1 icon d-flex justify-content-center align-items-center"><a href="#"><i
+                                    class="fa-brands fa-facebook fs-5 text-info"></i></a></li>
+                        <li class="mx-1 icon d-flex justify-content-center align-items-center"><a href="#"><i
+                                    class="fa-brands fa-twitter fs-5 text-info"></i></a></li>
+                        <li class="mx-1 icon d-flex justify-content-center align-items-center"><a href="#"><i
+                                    class="fa-brands fa-google-plus fs-5 text-info"></i></a></li>
+                        <li class="mx-1 icon d-flex justify-content-center align-items-center"><a href="#"><i
+                                    class="fa-brands fa-pinterest fs-5 text-info"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="./weather js/all.min.js"></script>
+    <script src="./weather js/bootstrap.bundle.min.js"></script>
+    <script src="./weather js/weather.js"></script>
+</body>
+
+</html>
